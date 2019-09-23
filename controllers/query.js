@@ -15,7 +15,7 @@ export const search = async (req, res) => {
 
   const searchParams = `${api_url}${searchType}/?` + queryString.stringify(searchRequest);
   try {
-    let result = await axios.get(searchParams, { headers: { Authorization: api_key } });
+    let result = await axios.get(searchParams, { headers: { Authorization: `Token ${api_key}` } });
     if (
       (result.data.passages && !result.data.passages.length) ||
       (result.data.results && !result.data.results.length)
