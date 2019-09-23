@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "dev": "env-cmd -f ./config/dev.env nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "jeff comer",
@@ -17,6 +18,7 @@
     "query-string": "^6.8.3"
   },
   "devDependencies": {
+    "env-cmd": "^10.0.1",
     "eslint": "^6.4.0"
   }
 }
