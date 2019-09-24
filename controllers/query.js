@@ -11,6 +11,7 @@ export const search = async (req, res) => {
     'include-footnotes': req.query.includeFootnotes,
     'include-footnote-body': req.query.includeFootnoteBody,
     'include-verse-numbers': req.query.includeVerseNumbers,
+    page: req.query.page,
   };
 
   const searchParams = `${api_url}${searchType}/?` + queryString.stringify(searchRequest);
@@ -26,6 +27,7 @@ export const search = async (req, res) => {
     if (searchType === 'text') {
       res.json(result.data.passages[0].split('\n'));
     } else {
+      console.log(result.data);
       res.json(result.data);
     }
   } catch (error) {
